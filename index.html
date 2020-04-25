@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="FR">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Part 5 Ex 1</title>
+    </head>
+
+    <body>
+        <form name="login">
+            <fieldset>
+                <legend>Mot de passe</legend>
+                <input type="password" id="password" name="password" placeholder="Mot de Passe" required />
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmer le mot de passe" required />
+                <button onclick='checkPass();'>Confirm</button>
+            </fieldset>
+        </form>
+
+        <script>
+            function checkPass() {
+                var loginForm = document.forms.login;
+                var pass = document.getElementById('password').value, confirmPass = document.getElementById('confirmPassword').value;
+                if (pass == confirmPass) {
+                    loginForm.elements.password.style.borderColor = 'green';
+                    loginForm.elements.confirmPassword.style.borderColor = 'green';
+                    event.preventDefault();
+                } else {
+                    loginForm.elements.password.style.borderColor = 'red';
+                    loginForm.elements.confirmPassword.style.borderColor = 'red';
+                    event.preventDefault();
+                }
+            }
+        </script>
+
+    </body>
+
+</html>
